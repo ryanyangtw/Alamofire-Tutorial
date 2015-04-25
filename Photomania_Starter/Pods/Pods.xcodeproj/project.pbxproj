@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E5E5C7E2041604362C1FCCA /* Pods-Photomania-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 030DFFBF5DB728697F7F98BB /* Pods-Photomania-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		761682438062CC0F5C70715C /* Pods-Photomania-Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E532456FE9668F1401779896 /* Pods-Photomania-Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80C865B3E5985E593B598BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE85B59336247024EF468D /* Foundation.framework */; };
+		972F29BB684254BF1C59D1F3 /* Pods-Photomania-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B609699079FFA0CB51FF062F /* Pods-Photomania-dummy.m */; };
+		B072A5D96FED0D962365A1EC /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335AF41725DB99A2DD2EF8FC /* Alamofire.swift */; };
+		C17ACBF716FEB5D7C5D3F001 /* Pods-Photomania-Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 161078ECDB9471FCDD786CE6 /* Pods-Photomania-Alamofire-dummy.m */; };
+		DB85B99E0A38A7CB6D742C10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BE85B59336247024EF468D /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		372202ECE42108DD81459743 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5C13B7E55C66BAE8F2DA4FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AF964FF3E69C80044E45BE5;
+			remoteInfo = "Pods-Photomania-Alamofire";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		030DFFBF5DB728697F7F98BB /* Pods-Photomania-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Photomania-umbrella.h"; sourceTree = "<group>"; };
+		0E47CE11E10A752378CFB58A /* Pods_Photomania.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photomania.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F2CCB93B4B092309F8EA8B3 /* Pods-Photomania.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Photomania.release.xcconfig"; sourceTree = "<group>"; };
+		161078ECDB9471FCDD786CE6 /* Pods-Photomania-Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Photomania-Alamofire-dummy.m"; sourceTree = "<group>"; };
+		16ECB6EB6B9F3BBAC96B6F80 /* Pods-Photomania-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Photomania-frameworks.sh"; sourceTree = "<group>"; };
+		1968C9682421382CB1E0E76F /* Pods-Photomania.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Photomania.debug.xcconfig"; sourceTree = "<group>"; };
+		335AF41725DB99A2DD2EF8FC /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		41A4D7869807083535CCEA32 /* Pods-Photomania-Alamofire-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Photomania-Alamofire-Private.xcconfig"; sourceTree = "<group>"; };
+		42920EC2CE1E0222B621B2AC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DCD646841800D939DF0974C /* Pods-Photomania-Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Photomania-Alamofire.xcconfig"; sourceTree = "<group>"; };
+		4E399E4D47DC800DAADDF66E /* Pods-Photomania-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Photomania-acknowledgements.plist"; sourceTree = "<group>"; };
+		58B39A03D2E3F64BED41F9AC /* Pods-Photomania-Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Photomania-Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		73E7C90418F80CF1E953B150 /* Pods-Photomania-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Photomania-resources.sh"; sourceTree = "<group>"; };
+		986AB98D16731AC8F5FAF2E8 /* Pods-Photomania-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Photomania-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A4BE85B59336247024EF468D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B609699079FFA0CB51FF062F /* Pods-Photomania-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Photomania-dummy.m"; sourceTree = "<group>"; };
+		D04B7207CA5A143CD1FEEC4B /* Pods-Photomania-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Photomania-environment.h"; sourceTree = "<group>"; };
+		D64C7FFD69D30E8DAD855E1F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E339C64291980E5795F41905 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4347A248457841348C1D5C5 /* Pods-Photomania.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Photomania.modulemap"; sourceTree = "<group>"; };
+		E532456FE9668F1401779896 /* Pods-Photomania-Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Photomania-Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		ED99FBABD05F7EBDD332F246 /* Pods-Photomania-Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Photomania-Alamofire.modulemap"; sourceTree = "<group>"; };
+		F8243AE490EFC11F0F0B273D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7647865FFFAB8F893B291910 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB85B99E0A38A7CB6D742C10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBF944600C8152A873C5AFB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80C865B3E5985E593B598BC1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22A99859D20DD6000D684732 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42920EC2CE1E0222B621B2AC /* Alamofire.framework */,
+				0E47CE11E10A752378CFB58A /* Pods_Photomania.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46C3F778488977CF67027B20 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				335AF41725DB99A2DD2EF8FC /* Alamofire.swift */,
+				CFA9D3BBFA1C903248A2072B /* Support Files */,
+			);
+			path = Alamofire;
+			sourceTree = "<group>";
+		};
+		6268CF30F8E124242A6E42A2 /* Pods-Photomania */ = {
+			isa = PBXGroup;
+			children = (
+				F8243AE490EFC11F0F0B273D /* Info.plist */,
+				E4347A248457841348C1D5C5 /* Pods-Photomania.modulemap */,
+				986AB98D16731AC8F5FAF2E8 /* Pods-Photomania-acknowledgements.markdown */,
+				4E399E4D47DC800DAADDF66E /* Pods-Photomania-acknowledgements.plist */,
+				B609699079FFA0CB51FF062F /* Pods-Photomania-dummy.m */,
+				D04B7207CA5A143CD1FEEC4B /* Pods-Photomania-environment.h */,
+				16ECB6EB6B9F3BBAC96B6F80 /* Pods-Photomania-frameworks.sh */,
+				73E7C90418F80CF1E953B150 /* Pods-Photomania-resources.sh */,
+				030DFFBF5DB728697F7F98BB /* Pods-Photomania-umbrella.h */,
+				1968C9682421382CB1E0E76F /* Pods-Photomania.debug.xcconfig */,
+				0F2CCB93B4B092309F8EA8B3 /* Pods-Photomania.release.xcconfig */,
+			);
+			name = "Pods-Photomania";
+			path = "Target Support Files/Pods-Photomania";
+			sourceTree = "<group>";
+		};
+		62BF1EEA425CE07B883E1A62 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46C3F778488977CF67027B20 /* Alamofire */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B8CE482E43D7F84907D6F0A2 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE85B59336247024EF468D /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		C45831E6DF63EA4EBA5F7027 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6268CF30F8E124242A6E42A2 /* Pods-Photomania */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CFA9D3BBFA1C903248A2072B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E339C64291980E5795F41905 /* Info.plist */,
+				ED99FBABD05F7EBDD332F246 /* Pods-Photomania-Alamofire.modulemap */,
+				4DCD646841800D939DF0974C /* Pods-Photomania-Alamofire.xcconfig */,
+				41A4D7869807083535CCEA32 /* Pods-Photomania-Alamofire-Private.xcconfig */,
+				161078ECDB9471FCDD786CE6 /* Pods-Photomania-Alamofire-dummy.m */,
+				58B39A03D2E3F64BED41F9AC /* Pods-Photomania-Alamofire-prefix.pch */,
+				E532456FE9668F1401779896 /* Pods-Photomania-Alamofire-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Photomania-Alamofire";
+			sourceTree = "<group>";
+		};
+		E4C76FF5A9B8F8AF9FAF7B77 = {
+			isa = PBXGroup;
+			children = (
+				D64C7FFD69D30E8DAD855E1F /* Podfile */,
+				F5FF4CAE52498B39BC5F28A8 /* Frameworks */,
+				62BF1EEA425CE07B883E1A62 /* Pods */,
+				22A99859D20DD6000D684732 /* Products */,
+				C45831E6DF63EA4EBA5F7027 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		F5FF4CAE52498B39BC5F28A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8CE482E43D7F84907D6F0A2 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		89AD293EE278A7E0EDA29A48 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				761682438062CC0F5C70715C /* Pods-Photomania-Alamofire-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BF406E36653F404CBB19ACB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E5E5C7E2041604362C1FCCA /* Pods-Photomania-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0C9DE4509F2E625EF37C61D9 /* Pods-Photomania */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF30B1C5DD8A2450A706E698 /* Build configuration list for PBXNativeTarget "Pods-Photomania" */;
+			buildPhases = (
+				0F0119C5892449847B104D78 /* Sources */,
+				CBF944600C8152A873C5AFB6 /* Frameworks */,
+				9BF406E36653F404CBB19ACB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				130A363054582C1AED4B2F3D /* PBXTargetDependency */,
+			);
+			name = "Pods-Photomania";
+			productName = "Pods-Photomania";
+			productReference = 0E47CE11E10A752378CFB58A /* Pods_Photomania.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2AF964FF3E69C80044E45BE5 /* Pods-Photomania-Alamofire */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D71BF48CD4EF504646BE96E9 /* Build configuration list for PBXNativeTarget "Pods-Photomania-Alamofire" */;
+			buildPhases = (
+				1BCDE7F861A348BFDDF732B7 /* Sources */,
+				7647865FFFAB8F893B291910 /* Frameworks */,
+				89AD293EE278A7E0EDA29A48 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Photomania-Alamofire";
+			productName = "Pods-Photomania-Alamofire";
+			productReference = 42920EC2CE1E0222B621B2AC /* Alamofire.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5C13B7E55C66BAE8F2DA4FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = A65049B598A13521171CFAAC /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4C76FF5A9B8F8AF9FAF7B77;
+			productRefGroup = 22A99859D20DD6000D684732 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0C9DE4509F2E625EF37C61D9 /* Pods-Photomania */,
+				2AF964FF3E69C80044E45BE5 /* Pods-Photomania-Alamofire */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F0119C5892449847B104D78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				972F29BB684254BF1C59D1F3 /* Pods-Photomania-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BCDE7F861A348BFDDF732B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B072A5D96FED0D962365A1EC /* Alamofire.swift in Sources */,
+				C17ACBF716FEB5D7C5D3F001 /* Pods-Photomania-Alamofire-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		130A363054582C1AED4B2F3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Photomania-Alamofire";
+			target = 2AF964FF3E69C80044E45BE5 /* Pods-Photomania-Alamofire */;
+			targetProxy = 372202ECE42108DD81459743 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		29A2B1A60E2FFBF4382EE3E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88E23D049D58F01E867AF12E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F2CCB93B4B092309F8EA8B3 /* Pods-Photomania.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Photomania/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Photomania/Pods-Photomania.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Photomania;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9697CBC67CCB81A9D1E385E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A4D7869807083535CCEA32 /* Pods-Photomania-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Photomania-Alamofire/Pods-Photomania-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Photomania-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Photomania-Alamofire/Pods-Photomania-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E9E8A92B6C0BD9B6C563980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1968C9682421382CB1E0E76F /* Pods-Photomania.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Photomania/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Photomania/Pods-Photomania.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_Photomania;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AA262D96A3BAFFD953E4C6DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41A4D7869807083535CCEA32 /* Pods-Photomania-Alamofire-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Photomania-Alamofire/Pods-Photomania-Alamofire-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Photomania-Alamofire/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Photomania-Alamofire/Pods-Photomania-Alamofire.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Alamofire;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E7DA5A4399973721FB85819B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A65049B598A13521171CFAAC /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7DA5A4399973721FB85819B /* Debug */,
+				29A2B1A60E2FFBF4382EE3E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF30B1C5DD8A2450A706E698 /* Build configuration list for PBXNativeTarget "Pods-Photomania" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E9E8A92B6C0BD9B6C563980 /* Debug */,
+				88E23D049D58F01E867AF12E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D71BF48CD4EF504646BE96E9 /* Build configuration list for PBXNativeTarget "Pods-Photomania-Alamofire" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA262D96A3BAFFD953E4C6DD /* Debug */,
+				9697CBC67CCB81A9D1E385E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F5C13B7E55C66BAE8F2DA4FA /* Project object */;
+}
