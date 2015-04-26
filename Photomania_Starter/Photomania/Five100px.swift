@@ -9,6 +9,70 @@
 import UIKit
 import Alamofire
 
+@objc public protocol ResponseCollectionSerializable {
+  // return collection [Self]
+  static func collection(#response: NSHTTPURLResponse, representation: AnyObject) -> [Self]
+}
+
+extension Alamofire.Request {
+
+  public func responseCollection<T: ResponseCollectionSerializable>(completionHandler:
+    (NSURLRequest, NSHTTPURLResponse?, [T]?, NSError?) -> Void) -> Self {
+  
+      let serializer: Serializer = {
+        (request, response, data) in
+        let JSONSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+        let (JSON: AnyObject?, serializationError) = JSONSerializer(request, response, data)
+        
+        //println("response: \(response)")
+        //println("data: \(data)")
+        //println("request: \(request)")
+        if response != nil && JSON != nil {
+          return (T.collection(response: response!, representation: JSON!), nil)
+        } else {
+          return (nil, serializationError)
+        }
+      }
+      
+      return response(serializer: serializer, completionHandler: {
+        (request, response, object, error) in
+        completionHandler(request, response, object as? [T], error)
+      })
+  }
+  
+}
+
+
+
+@objc public protocol ResponseObjectSerializable {
+  init(response: NSHTTPURLResponse, representation: AnyObject)
+}
+
+extension Alamofire.Request {
+  // .responseObject is a generic function. It can serialize any data object that conforms to ResponseObjectSerializable
+  // If you define a new class that has an initializer of the form init(response:represntation:), Alamofire can automatically return object of that type from server.
+  public func responseObject<T: ResponseObjectSerializable>(completionHandler: (NSURLRequest, NSHTTPURLResponse?, T?, NSError?) -> Void) -> Self {
+    
+    let serializer: Serializer = {
+      (request, response, data) in
+      let JSONSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+      let (JSON: AnyObject?, serializationError) = JSONSerializer(request, response, data)
+      if response != nil && JSON != nil {
+        return (T(response: response!, representation: JSON!), nil)
+      } else {
+        return (nil, serializationError)
+      }
+      
+    }
+    
+    return response(serializer: serializer, completionHandler: { (request, response, object, error) in
+      completionHandler(request, response, object as? T, error)
+    })
+    
+  }
+}
+
+
 extension Alamofire.Request {
   
   // Declare a class function that returns a Serializer colsure. This Serializer is a typealiased in Alamofire
@@ -26,17 +90,15 @@ extension Alamofire.Request {
     }
   }
   
-
-  
   func responseImage(completionHandler: (NSURLRequest, NSHTTPURLResponse?, UIImage?, NSError?) -> Void) -> Self {
     
     return response(serializer: Request.imageResponseSerializer(), completionHandler: {
       (request, response, image, error) in
-        completionHandler(request, response, image as? UIImage, error)
-    
+      completionHandler(request, response, image as? UIImage, error)
+      
     })
   }
-  
+ 
 }
 
 
@@ -69,7 +131,7 @@ struct Five100px {
             
           case .Comments(let photoID, let commentsPage):
             var params = ["consumer_key": Router.consumerKey, "comments": "1", "comments_page": "\(commentsPage)"]
-            return ("/photo/\(photoID)/comments", params)
+            return ("/photos/\(photoID)/comments", params)
         }
       }()
       
@@ -92,7 +154,7 @@ struct Five100px {
   }
 }
 
-class PhotoInfo: NSObject {
+class PhotoInfo: NSObject, ResponseObjectSerializable {
   let id: Int
   let url: String
   
@@ -137,14 +199,35 @@ class PhotoInfo: NSObject {
   }
 }
 
-class Comment {
+
+final class Comment: ResponseCollectionSerializable {
+  
+  // This makes Commetn conform to ResponseCollectionSerializable
+  @objc static func collection(#response: NSHTTPURLResponse, representation: AnyObject) -> [Comment] {
+    
+    var comments = [Comment]()
+    
+    /*
+    for comment in representation.valueForKeyPath("comments") as! [NSDictionary] {Comment
+      comments.append(Comment(JSON: comment))
+    }
+    */
+    for comment in representation.valueForKeyPath("comments") as! [[String: AnyObject]] {
+      comments.append(Comment(JSON: comment))
+    }
+    return comments
+  }
+  
   let userFullname: String
   let userPictureURL: String
   let commentBody: String
   
   init(JSON: AnyObject) {
+    //userFullname = JSON["user"]["fullname"] as! String
     userFullname = JSON.valueForKeyPath("user.fullname") as! String
     userPictureURL = JSON.valueForKeyPath("user.userpic_url") as! String
     commentBody = JSON.valueForKeyPath("body") as! String
   }
+  
 }
+

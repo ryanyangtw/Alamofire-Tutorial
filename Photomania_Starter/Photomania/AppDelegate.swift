@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    // Using Apperance Proxy to customize the theme of the app
     UINavigationBar.appearance().barStyle = .BlackTranslucent
     UINavigationBar.appearance().tintColor = UIColor.whiteColor()
     

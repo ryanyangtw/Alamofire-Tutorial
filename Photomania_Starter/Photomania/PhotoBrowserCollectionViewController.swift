@@ -10,8 +10,10 @@ import UIKit
 import Alamofire
 
 class PhotoBrowserCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+  // The model // 不希望重複，所以用set
   var photos = NSMutableOrderedSet()
   
+  // 下拉刷新
   let refreshControl = UIRefreshControl()
   
   // There are two variables to keep track of whether you;re currently populating photos, and what the current page of photos is.
@@ -20,6 +22,8 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
   
   let PhotoBrowserCellIdentifier = "PhotoBrowserCell"
   let PhotoBrowserFooterViewIdentifier = "PhotoBrowserFooterView"
+  
+  let imageCache = NSCache()
   
   // MARK: Life-cycle
   
@@ -54,6 +58,9 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
+    
+    // Empty local image cache as they can be re-downloaded
+    self.imageCache.removeAllObjects()
   }
   
   // MARK: CollectionView
@@ -68,13 +75,33 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
     let imageURL = (photos.objectAtIndex(indexPath.row) as! PhotoInfo).url
     
     // When you dequeue a cell, you invalidate the image by setting it to nil. This ensures you're not displaying the previous image. Second, you cancel the previous request(if still in progess) to avoid wasting cycles for getting an image that will be discarded
-    cell.imageView.image = nil
+    //cell.imageView.image = nil
+    
+    // 1. The dequeued cell may already have an Alamofire request attached to it. You can simply cancel it because it's no longer valid for this new cell
     cell.request?.cancel()
     
-    cell.request = Alamofire.request(.GET, imageURL).responseImage() {
-      (request, _, image, error) in
-      if error == nil && image != nil {
-        cell.imageView.image = image
+    // 2. Use optional binding to check if you have a cached version of this photo. If so, use the cached version instead of downloading ir again
+    if let image = self.imageCache.objectForKey(imageURL) as? UIImage {
+      cell.imageView.image = image
+    } else {
+      // 3. If you don't have a cached version of the photo, download it. However, the dequeued cell may be already showing another image. in this case, set it to nil so that the cell is blank while the requested photo is downloaded.
+      cell.imageView.image = nil
+      
+      // 4. Download the image from the server, but this time validate the content-type of the returned response, Of it's not an image, error will contain a value and therefore you won't do anything with the potentially invalid imamge reponse. The kay here is that you store the Alamofire request object in tehs cell, for use when your asynchronous network call returns.
+      cell.request = Alamofire.request(.GET, imageURL).validate(contentType: ["image/*"]).responseImage() {
+        (request, _, image, error) in
+        if error == nil && image != nil {
+          
+          // 5. If you did not receive an error and you downloaded a proper photo, cache it for later.
+          self.imageCache.setObject(image!, forKey: request.URLString)
+          
+          // 6. Set the cell's image accordingly
+          cell.imageView.image = image
+        } else {
+          /*
+          If the cell wen off-screen before the image was download, we cancel it and an NSURLErrorDomain (-999: canceled) is returned. This is a normal behavior
+          */
+        }
       }
     }
     
@@ -90,6 +117,7 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
     return cell
   }
   
+  // Used to display a spinner at the bottom when we're waiting to load more photo'
   override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
     return collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: PhotoBrowserFooterViewIdentifier, forIndexPath: indexPath) as! UICollectionReusableView
   }
@@ -143,7 +171,7 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
   func populatePhotos() {
   
     // 2. populatePhotos() loads photos in the currentPage and uses populatingPhotos as a flag to avoid loading the next page while you're still loading the current page.
-    if populatingPhotos {
+    if populatingPhotos {  // Do not populate more photos if we're in the progress of loading a page
       return
     }
     
@@ -161,7 +189,7 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
           // 6. Here you use filter function out NSFW(Not Safe For Work) images.
           // 7. The map function takes a closure and returns an array of PhotoInfo objects. if you lok at the code of this class, you'll see that it overrides both isEqual and hash. Both oh these mehotds use an inteher for the id property so ordering and uniquing PhotoInfo objects will still be a relatively fast operation.
 
-          let pohtoInfos = ((JSON as! [String: AnyObject])["photos"] as! [[String: AnyObject]]).filter({
+          let pohtoInfos = ((JSON as! [String: AnyObject])["photos"] as! [NSDictionary]).filter({
             ($0["nsfw"] as! Bool) == false
           }).map {
             PhotoInfo(id: $0["id"] as! Int, url: $0["image_url"] as! String)
@@ -195,7 +223,15 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
   }
   
   func handleRefresh() {
+    refreshControl.beginRefreshing()
     
+    self.photos.removeAllObjects()
+    self.currentPage = 1
+    
+    self.collectionView!.reloadData()
+    
+    refreshControl.endRefreshing()
+    populatePhotos()
   }
 }
 

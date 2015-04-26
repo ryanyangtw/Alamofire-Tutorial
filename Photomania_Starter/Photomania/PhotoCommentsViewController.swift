@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PhotoCommentsViewController: UITableViewController {
   var photoID: Int = 0
@@ -17,11 +18,23 @@ class PhotoCommentsViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Dynamic rowHeight
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 50.0
     
     title = "Comments"
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "dismiss")
+    
+    Alamofire.request(Five100px.Router.Comments(photoID, 1)).validate().responseCollection() {
+      (_, _, comments: [Comment]?, error) in
+      
+      if error == nil {
+        self.comments = comments
+        self.tableView.reloadData()
+      }
+    
+    
+    }
   }
   
   func dismiss() {
@@ -36,6 +49,24 @@ class PhotoCommentsViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("CommentCell", forIndexPath: indexPath) as! PhotoCommentTableViewCell
+    
+    cell.userFullnameLabel.text = comments![indexPath.row].userFullname
+    cell.commentLabel.text = comments![indexPath.row].commentBody
+    cell.userImageView.image = nil
+    
+    let imageURL = comments![indexPath.row].userPictureURL
+    
+    Alamofire.request(.GET, imageURL).validate().responseImage() {
+      (request, _, image, error) in
+      
+      if error == nil {
+        // 若抓回來的圖已經不是當初要的那張，這不加入cell中
+        if request.URLString.isEqual(imageURL) {
+          cell.userImageView.image = image
+        }
+      }
+    }
+    
     
     return cell
   }
